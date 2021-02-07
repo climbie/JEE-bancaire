@@ -22,7 +22,22 @@ public class CompteBancaire implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    private String firstName;
+    private String lastName;
+    private String accountNumber;
+    private double balance;
 
+    public CompteBancaire() {
+    }
+
+    public CompteBancaire(String firstName, String lastName, String accountNumber, double balance) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+    }
+    
+    
     public int getId() {
         return id;
     }
@@ -31,6 +46,42 @@ public class CompteBancaire implements Serializable {
         this.id = id;
     }
 
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 0;
